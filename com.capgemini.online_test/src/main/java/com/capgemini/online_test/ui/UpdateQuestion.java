@@ -13,7 +13,7 @@ import com.capgemini.online_test.services.Examination;
 	            System.out.println("enter test id");
 	                BigInteger QuestionId=sc.nextBigInteger();
 	                System.out.println("Add question details");
-	                Question ques=new AddingQuestions().getObject();
+	                Question ques=new AddQuestions().getObject();
 	                
 	        }
 	        void takeUpdatedQuestion()

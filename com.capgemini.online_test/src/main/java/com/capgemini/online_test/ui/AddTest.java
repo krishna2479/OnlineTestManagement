@@ -10,10 +10,10 @@ import com.capgemini.online_test.dto.Question;
 import com.capgemini.online_test.dto.Tests;
 import com.capgemini.online_test.services.Examination;
 
-public class AddingTest {
+public class AddTest {
         java.util.Scanner sc=new java.util.Scanner(System.in);
         Tests testobj;
-        public AddingTest()
+        public AddTest()
         {   System.out.println("enter test id");
                 BigInteger testID=sc.nextBigInteger();
                  System.out.println("enter Test Title");
@@ -36,7 +36,7 @@ public class AddingTest {
                 
                 testobj=new Tests(testID,testTitle,duration, null, totalMarks, testMarksScore, null, startTime, endTime);
         }
-        public AddingTest(BigInteger testId,String title,LocalTime dur,Set<Question> questions,BigDecimal tmarks,BigDecimal marksScored,LocalDateTime sTime,LocalDateTime eTime)
+        public AddTest(BigInteger testId,String title,LocalTime dur,Set<Question> questions,BigDecimal tmarks,BigDecimal marksScored,LocalDateTime sTime,LocalDateTime eTime)
         {
         	testobj= new Tests(testId,title,dur, questions, tmarks, marksScored, null, sTime, eTime);
         }

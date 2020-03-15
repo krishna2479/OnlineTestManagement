@@ -11,7 +11,7 @@ public class UpdateTest {
     Tests newTest;
     UpdateTest()
     {
-            newTest=new AddingTest().getObject();
+            newTest=new AddTest().getObject();
             
     }
      void takeUpdatedTest()

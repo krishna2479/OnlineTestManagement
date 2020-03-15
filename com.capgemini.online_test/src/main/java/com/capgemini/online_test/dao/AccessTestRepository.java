@@ -11,7 +11,7 @@ import com.capgemini.online_test.dto.Question;
 import com.capgemini.online_test.dto.Tests;
 import com.capgemini.online_test.util.Test_Rep;
 
-public class AccessingTestRep {
+public class AccessTestRepository {
         
         
         

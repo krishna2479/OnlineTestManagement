@@ -4,11 +4,11 @@ import java.math.*;
 import com.capgemini.online_test.dto.*;
 import com.capgemini.online_test.services.Examination;
 import com.capgemini.online_test.services.Validations;
-public class AddingQuestions {
+public class AddQuestions {
         Scanner sc=new Scanner(System.in);
         Question ques;
         
-        public AddingQuestions()
+        public AddQuestions()
         {
         	/*System.out.println("Enter username");
         	String n=sc.next();
@@ -31,7 +31,7 @@ public class AddingQuestions {
                 BigDecimal marks=new BigDecimal(0);
            ques=new Question(qid,options,title,answer,tmarks,option,marks);
         }
-        public AddingQuestions(BigInteger quesId,String title,List<String> list,Integer ans,BigDecimal tmarks,Integer option,BigDecimal marks)
+        public AddQuestions(BigInteger quesId,String title,List<String> list,Integer ans,BigDecimal tmarks,Integer option,BigDecimal marks)
         {
         	ques=new Question(quesId,list,title,ans,tmarks,option,marks);   	
         }

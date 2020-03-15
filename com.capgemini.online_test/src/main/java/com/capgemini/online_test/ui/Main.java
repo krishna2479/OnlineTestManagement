@@ -2,7 +2,7 @@ package com.capgemini.online_test.ui;
 
 import java.util.Scanner;
 
-import com.capgemini.online_test.dao.AccessingTestRep;
+import com.capgemini.online_test.dao.AccessTestRepository;
 import com.capgemini.online_test.dto.Question;
 import com.capgemini.online_test.dto.Tests;
 import com.capgemini.online_test.services.Examination;
@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub        
-		new AccessingTestRep();
+		new AccessTestRepository();
 		int choice=0;
         Scanner sc=new Scanner(System.in);
         
@@ -31,7 +31,7 @@ public class Main {
                         
                                 choice=sc.nextInt();
                                 switch(choice){
-                                        case 1: new AddingTest().pushData();	 
+                                        case 1: new AddTest().pushData();	 
                                                         break;
                                         case 2: new UpdateTest().takeUpdatedTest();
                                                  break;
@@ -54,13 +54,13 @@ public class Main {
                                 choice=sc.nextInt();
 
                                         switch(choice){
-                                        case 1: new AddingQuestions().pushData();
+                                        case 1: new AddQuestions().pushData();
                                                         break;
                                         case 2: 
                                         		new UpdateQuestion().takeUpdatedQuestion();
                                                         break;
                                         case 3: 
-                                        		new Examination().deletingQuestion(new Scanner(System.in).nextBigInteger(),new AddingQuestions().getObject());                                                     
+                                        		new Examination().deletingQuestion(new Scanner(System.in).nextBigInteger(),new AddQuestions().getObject());                                                     
                                         		break;
                                         		
                                 }

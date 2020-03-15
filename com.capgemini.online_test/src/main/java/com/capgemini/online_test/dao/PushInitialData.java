@@ -2,8 +2,8 @@ package com.capgemini.online_test.dao;
 
 import com.capgemini.online_test.dto.User;
 import com.capgemini.online_test.util.*;
-public class PushingInitialData {
-	PushingInitialData()
+public class PushInitialData {
+	PushInitialData()
 	{
 		User o1=new User("Admin1","admin123",11101,null,true);
 		User o2=new User("user1","user123",21101,null,false);
