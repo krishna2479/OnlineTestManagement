@@ -14,24 +14,43 @@ import java.util.*;
 import com.capgemini.online_test.dto.Question;
 import com.capgemini.online_test.ui.AddingQuestions;
 import com.capgemini.online_test.ui.AddingTest;
+
 public class TestCases {
 	@Test
-    public void getResultTest()
+    public void addTest_Test()
     {
-		/*Question q1=new AddingQuestions(new BigInteger("111"),"ques1",new ArrayList<String>(),new Integer(1),new BigDecimal(4),new Integer(2),new BigDecimal(0)).getObject();
-		Question q2=new AddingQuestions(new BigInteger("112"),"ques1",new ArrayList<String>(),new Integer(2),new BigDecimal(4),new Integer(2),new BigDecimal(0)).getObject();
-		Question q3=new AddingQuestions(new BigInteger("113"),"ques1",new ArrayList<String>(),new Integer(3),new BigDecimal(4),new Integer(3),new BigDecimal(0)).getObject();
-		Question q4=new AddingQuestions(new BigInteger("114"),"ques1",new ArrayList<String>(),new Integer(4),new BigDecimal(4),new Integer(4),new BigDecimal(0)).getObject();
-		Question q5=new AddingQuestions(new BigInteger("115"),"ques1",new ArrayList<String>(),new Integer(1),new BigDecimal(4),new Integer(4),new BigDecimal(0)).getObject();
-		Question q6=new AddingQuestions(new BigInteger("116"),"ques1",new ArrayList<String>(),new Integer(2),new BigDecimal(4),new Integer(2),new BigDecimal(0)).getObject();
-        Set<Question> questions=new TreeSet<Question>();
-        questions.add(q1);
-        questions.add(q2);
-        questions.add(q3);
-        questions.add(q4);
-        questions.add(q5);
-        questions.add(q6);*/
         Tests test=new AddingTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
         assertEquals(true,new Examination().addTest(test));
     }
+	@Test
+	public void updateTest_Test()
+	{   Tests test=new AddingTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
+		Tests test1=new AddingTest(new BigInteger("10001"),"newTest",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
+		new Examination().addTest(test);
+		assertEquals(true,new Examination().updateTest(new BigInteger("10001"), test1));
+	}
+	@Test
+	public void updateTest_Test2()
+	{   Tests test=new AddingTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
+		Tests test1=new AddingTest(new BigInteger("10001"),"newTest",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
+		new Examination().addTest(test);
+		assertEquals(false,new Examination().updateTest(new BigInteger("10002"), test1));
+	}
+	@Test
+	public void deleteTest_Test()
+	{
+		Tests test=new AddingTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
+		new Examination().addTest(test);
+		assertEquals(true,new Examination().deleteTest(new BigInteger("10001")));
+		
+	}
+	@Test
+	public void deleteTest_Test2()
+	{
+		Tests test=new AddingTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
+		new Examination().addTest(test);
+		assertEquals(false,new Examination().deleteTest(new BigInteger("10002")));
+		
+	}
+	
 }

@@ -20,9 +20,10 @@ public class AccessingTestRep {
                 new Test_Rep().putData(test);
                 return true;
         }
-        public void updateTest(BigInteger testid,Tests test)
+        public boolean updateTest(BigInteger testid,Tests test)
         {
                 new Test_Rep().putData(testid, test);
+                return true;
         }
         public boolean checkTest(BigInteger testId)
         {
@@ -30,9 +31,10 @@ public class AccessingTestRep {
                 return tr.containsKey(testId);
                 
         }
-        public void deleteTest(BigInteger testId)
+        public boolean deleteTest(BigInteger testId)
         {
                 new Test_Rep().removeData(testId);
+                return true;
         }
         public BigDecimal retrieveMarks(Tests testId)
         {

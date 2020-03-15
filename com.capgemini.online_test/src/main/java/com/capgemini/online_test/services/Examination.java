@@ -21,19 +21,21 @@ public class Examination {
                 new AccessingTestRep().putTest(test);
                 return true;
         }
-        public void updateTest(BigInteger testId,Tests newTest )
+        public boolean updateTest(BigInteger testId,Tests newTest )
         {
                 if(new AccessingTestRep().checkTest(testId))
                 {
-                        new AccessingTestRep().updateTest(testId, newTest);
+                       return  new AccessingTestRep().updateTest(testId, newTest);
                 }
+                return false;
         }
-        public void deleteTest(BigInteger testId)
+        public boolean deleteTest(BigInteger testId)
         {
                 if(new AccessingTestRep().checkTest(testId))
                 {
-                        new AccessingTestRep().deleteTest(testId);
+                       return new AccessingTestRep().deleteTest(testId);
                 }
+                return false;
         }
         
         public void addQuestions(Question ques,BigInteger testId)
