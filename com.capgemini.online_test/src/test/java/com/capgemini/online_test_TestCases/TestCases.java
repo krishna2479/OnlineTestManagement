@@ -2,55 +2,68 @@ package com.capgemini.online_test_TestCases;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.Test;
-import com.capgemini.online_test.dto.Tests;
-import com.capgemini.online_test.services.Examination;
+import com.capgemini.online_test.exception.DurationException;
+import com.capgemini.online_test.services.ServiceImpl;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
-import com.capgemini.online_test.dto.Question;
-import com.capgemini.online_test.ui.AddQuestions;
-import com.capgemini.online_test.ui.AddTest;
+import com.capgemini.online_test.ui.OnlineTestMain;
 
 public class TestCases {
-	@Test
-    public void addTest_Test()
-    {
-        Tests test=new AddTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-        assertEquals(true,new Examination().addTest(test));
-    }
-	@Test
-	public void updateTest_Test()
-	{   Tests test=new AddTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-		Tests test1=new AddTest(new BigInteger("10001"),"newTest",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-		new Examination().addTest(test);
-		assertEquals(true,new Examination().updateTest(new BigInteger("10001"), test1));
-	}
-	@Test
-	public void updateTest_Test2()
-	{   Tests test=new AddTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-		Tests test1=new AddTest(new BigInteger("10001"),"newTest",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-		new Examination().addTest(test);
-		assertEquals(false,new Examination().updateTest(new BigInteger("10002"), test1));
-	}
-	@Test
-	public void deleteTest_Test()
-	{
-		Tests test=new AddTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-		new Examination().addTest(test);
-		assertEquals(true,new Examination().deleteTest(new BigInteger("10001")));
-		
-	}
-	@Test
-	public void deleteTest_Test2()
-	{
-		Tests test=new AddTest(new BigInteger("10001"),"test1",LocalTime.of(3,0),new TreeSet<Question>(),new BigDecimal(24),new BigDecimal(0),LocalDateTime.parse("2020-02-19 09:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),LocalDateTime.parse("2020-02-19 12:00",DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))).getObject();
-		new Examination().addTest(test);
-		assertEquals(false,new Examination().deleteTest(new BigInteger("10002")));
-		
-	}
+	ServiceImpl questionService = new ServiceImpl();
+	ServiceImpl testService = new ServiceImpl();
+	OnlineTestMain main = new OnlineTestMain();
 	
+	
+	@Test
+	void test() {
+		
+		com.capgemini.online_test.dto.Question question = main.addTheQuestion();
+		
+		assertEquals(question.getQuestionTitle() , questionService.addQuestion(question).getQuestionTitle());
+		
+		assertEquals(question.getQuestionId(), questionService.addQuestion(question).getQuestionId());
+	}
+
+  @Test
+  void test1()
+  {
+	  
+	  System.out.println("Checkin test title");
+	  
+	  
+	  
+	  assertEquals("Java Test", testService.showTest(BigInteger.valueOf(101)).getTestTitle());
+	  
+	  System.out.println("Checking obtained marks");
+	  assertEquals(BigDecimal.valueOf(70.20), testService.showTest(BigInteger.valueOf(101)).getTestMarksScored());
+	  
+  }
+	
+  @Test
+  void test2()
+  {
+ 
+		
+	  assertEquals(LocalTime.of(04, 30), testService.updateTest(BigInteger.valueOf(101), main.testUpdataion(), "duration").getTestDuration());
+	  System.out.println("Check updated time duration");
+  }
+  
+  @Test
+  void test3()
+  {
+	  
+	  
+	  assertEquals( "CSS Test", testService.deleteTest(BigInteger.valueOf(102)).getTestTitle());
+	  System.out.println("Checking title of deleted test");
+  }
+  
+  @Test 
+  void test4() throws DurationException
+  { 
+		
+	  assertEquals("java", testService.addTest(main.createTest()).getTestTitle());
+	  System.out.println("Checking title of deleted test");
+  }
 }
