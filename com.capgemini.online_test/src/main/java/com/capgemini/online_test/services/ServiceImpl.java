@@ -60,8 +60,9 @@ Scanner s = new Scanner(System.in);
 
 	@Override
 	public Test updateTest(BigInteger tId, Test testObj, String updateType) {
-
+		
 		testdao.updateTest(tId, testObj, updateType);
+		System.out.println("Test updated successfully.");
 		
 		return testObj;
 	

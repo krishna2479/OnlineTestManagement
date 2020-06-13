@@ -62,7 +62,7 @@ public class TestCollection {
 	}
 	
 	
-	static public Test addTest(Test test) {
+		public Test addTest(Test test) {
 		testList.add(test);
 		return test;
 	}

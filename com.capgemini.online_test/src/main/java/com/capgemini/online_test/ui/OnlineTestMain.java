@@ -34,7 +34,7 @@ static UserCollection uCollection = new UserCollection();
 	
 	//method to create a new test 
 	
-	public static Test createTest()
+	public static Test addTest()
 	{
 		
        Test test = new Test();
@@ -87,7 +87,7 @@ static UserCollection uCollection = new UserCollection();
 		LocalTime testDuration =LocalTime.of(testHour, testMinute,00);
 		test.setTestDuration(testDuration);
 		
-		System.out.println("......Enter testQeustions  .....  ");
+		System.out.println("......Enter testQuestions  .....  ");
 		
 		System.out.println("Enter no of question ");
 		
@@ -152,7 +152,7 @@ static UserCollection uCollection = new UserCollection();
 	
 	//method to show the test assigned to user
 	
-	public static void viewTheTest(BigInteger testId)
+	public static void showTest(BigInteger testId)
 	{
 		Test showTetst = serviceTest.showTest(testId);
 		
@@ -401,7 +401,7 @@ static UserCollection uCollection = new UserCollection();
 	     {
 	     case "1":
 	    	 
-	    	 Test test1 = createTest();
+	    	 Test test1 = addTest();
 			try {
 				serviceTest.addTest(test1);
 			} catch (DurationException e) {
@@ -417,7 +417,7 @@ static UserCollection uCollection = new UserCollection();
 	 		
 	 		BigInteger testId = s.nextBigInteger();
 	    	 
-		    viewTheTest(testId);
+		    showTest(testId);
 		   
 		break;
 		
@@ -496,7 +496,7 @@ static UserCollection uCollection = new UserCollection();
 					System.out.println("Enter testId");
 					
 					BigInteger tId = s.nextBigInteger();
-					viewTheTest(tId);
+					showTest(tId);
 					
 				break;
 

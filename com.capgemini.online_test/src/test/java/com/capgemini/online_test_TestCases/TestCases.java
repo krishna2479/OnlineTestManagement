@@ -15,16 +15,6 @@ public class TestCases {
 	ServiceImpl testService = new ServiceImpl();
 	OnlineTestMain main = new OnlineTestMain();
 	
-	
-	/*@Test
-	public void test() {
-		
-		com.capgemini.online_test.dto.Question question = main.addTheQuestion();
-		
-		assertEquals(question.getQuestionTitle() , questionService.addQuestion(question).getQuestionTitle());
-		
-		assertEquals(question.getQuestionId(), questionService.addQuestion(question).getQuestionId());
-	}*/
 
   @Test
   public void test1()
@@ -63,7 +53,7 @@ public class TestCases {
   public void test4() throws DurationException
   { 
 	  System.out.println("Add test to verify Test Title");
-	  assertEquals("java", testService.addTest(main.createTest()).getTestTitle());
+	  assertEquals("java", testService.addTest(main.addTest()).getTestTitle());
 	  System.out.println("Verified the title of test recently added");
   }
 }
