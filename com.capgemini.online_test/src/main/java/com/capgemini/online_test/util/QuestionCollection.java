@@ -26,8 +26,8 @@ public class QuestionCollection {
 		option2.add("None of the mentioned");
 		
 		
-		questionList.add(new Question(BigInteger.valueOf(001), option1, "1. Which of the following can be operands of arithmetic operators?", 1, BigDecimal.valueOf(1.5), 1, BigDecimal.valueOf(1.5)));
-		questionList.add(new Question(BigInteger.valueOf(002), option2, "2. Modulus operator, %, can be applied to which of these?", 1, BigDecimal.valueOf(1.5), 1, BigDecimal.valueOf(1.5)));
+		questionList.add(new Question(BigInteger.valueOf(001), option1, "1. what do you mean by core java?", 1, BigDecimal.valueOf(1.5), 1, BigDecimal.valueOf(1.5)));
+		questionList.add(new Question(BigInteger.valueOf(002), option2, "2. which is true about Operands in Java?", 1, BigDecimal.valueOf(1.5), 1, BigDecimal.valueOf(1.5)));
 		
 		questionList.add(new Question(BigInteger.valueOf(003), option1, "1. Which of the following can be operands of arithmetic operators?", 1, BigDecimal.valueOf(1.5), 1, BigDecimal.valueOf(1.5)));
 		questionList.add(new Question(BigInteger.valueOf(004), option2, "2. Modulus operator, %, can be applied to which of these?", 1, BigDecimal.valueOf(1.5), 1, BigDecimal.valueOf(1.5)));

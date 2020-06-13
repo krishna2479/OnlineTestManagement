@@ -209,12 +209,12 @@ static UserCollection uCollection = new UserCollection();
 		
 		switch (choice) {
 		case "1":
-			System.out.println("Enter new duration \n enter hour");
+			System.out.println("Enter new duration \n Enter hour");
 			
 			int testHour = s.nextInt();
 			updateType = "duration";
 			
-			System.out.println("enter minute");
+			System.out.println("Enter minute");
 			int testMinute = s.nextInt();
 			
 			testObj.setTestDuration(LocalTime.of(testHour, testMinute, 00));
@@ -391,9 +391,9 @@ static UserCollection uCollection = new UserCollection();
 		while(q == true)
 		{
 			
-	     System.out.println("Enter 1 add test\n enter 2 to show test \n enter 3 to update the test \n "
-	     	+ "enter 4 to delete the test "+ "\n enter 5 to add question \nEnter 6 to update the question"
-	     				+ "\nEnter 7 to show the test \n Enter other to exit");
+	     System.out.println(" Enter 1 add test\n Enter 2 to show test \n Enter 3 to update the test \n "
+	     	+ "Enter 4 to delete the test "+ "\n Enter 5 to add question \n Enter 6 to update the question"
+	     				+ "\n Enter 7 to show the test \n Enter other to exit");
 	     
 	     String choice = s.next();
 	     
@@ -409,8 +409,7 @@ static UserCollection uCollection = new UserCollection();
 				System.out.println(e.getMessage());
 				//e.printStackTrace();
 			}
-		   
-		   
+		  
 		   break;
 		
 	     case "2":
@@ -436,6 +435,7 @@ static UserCollection uCollection = new UserCollection();
 			BigInteger testId1 = s.nextBigInteger();
 			
 			serviceTest.deleteTest(testId1);
+			System.out.println("Test deleted.");
 			break;
 			
 		case "5":

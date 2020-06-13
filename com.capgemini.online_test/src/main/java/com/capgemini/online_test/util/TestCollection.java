@@ -33,7 +33,6 @@ public class TestCollection {
 	static 
 	{
 		
-		//question1.add(queService.showQuestion());
 		question1.add(questionDao.showQuestion(BigInteger.valueOf(001)));
 		question1.add(questionDao.showQuestion(BigInteger.valueOf(004)));
 		
@@ -44,11 +43,11 @@ public class TestCollection {
 		question3.add(questionDao.showQuestion(BigInteger.valueOf(004)));
 		
 		
-		testList.add(new Test(BigInteger.valueOf(101), "Java Test",LocalTime.of(02,30,00),question1, 
-				BigDecimal.valueOf(100.00), BigDecimal.valueOf(70.20), que, LocalDateTime.of(2020, 2, 12, 9, 30,00, 0),
+		testList.add(new Test(BigInteger.valueOf(101), "Core Java Test",LocalTime.of(02,30,00),question1, 
+				BigDecimal.valueOf(100.00), BigDecimal.valueOf(80), que, LocalDateTime.of(2020, 2, 12, 9, 30,00, 0),
 				LocalDateTime.of(2020, 2, 13, 12, 00,00, 0)));
 		
-		testList.add(new Test(BigInteger.valueOf(102), "CSS Test",LocalTime.of(02,00,00),question2, 
+		testList.add(new Test(BigInteger.valueOf(102), "HTML Test",LocalTime.of(02,00,00),question2, 
 				BigDecimal.valueOf(100.00), BigDecimal.valueOf(60.20), que, LocalDateTime.of(2020, 2, 15, 9, 30,00, 0),
 				LocalDateTime.of(2020, 2, 15, 02, 30,00, 0)));
 		
@@ -56,7 +55,7 @@ public class TestCollection {
 				BigDecimal.valueOf(100.00), BigDecimal.valueOf(60.20), que, LocalDateTime.of(2020, 2, 15, 9, 30,00, 0),
 				LocalDateTime.of(2020, 2, 15, 02, 30,00, 0)));
 		
-		testList.add(new Test(BigInteger.valueOf(104), "CSS Test",LocalTime.of(02,00,00),question4, 
+		testList.add(new Test(BigInteger.valueOf(104), "Angular Test",LocalTime.of(02,00,00),question4, 
 				BigDecimal.valueOf(100.00), BigDecimal.valueOf(60.20), que, LocalDateTime.of(2020, 2, 15, 9, 30,00, 0),
 				LocalDateTime.of(2020, 2, 15, 02, 30,00, 0)));
 		

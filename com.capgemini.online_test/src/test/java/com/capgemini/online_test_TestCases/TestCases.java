@@ -16,54 +16,54 @@ public class TestCases {
 	OnlineTestMain main = new OnlineTestMain();
 	
 	
-	@Test
-	void test() {
+	/*@Test
+	public void test() {
 		
 		com.capgemini.online_test.dto.Question question = main.addTheQuestion();
 		
 		assertEquals(question.getQuestionTitle() , questionService.addQuestion(question).getQuestionTitle());
 		
 		assertEquals(question.getQuestionId(), questionService.addQuestion(question).getQuestionId());
-	}
+	}*/
 
   @Test
-  void test1()
+  public void test1()
   {
 	  
-	  System.out.println("Checkin test title");
+	  System.out.println("Verifying Test title");
 	  
 	  
 	  
-	  assertEquals("Java Test", testService.showTest(BigInteger.valueOf(101)).getTestTitle());
+	  assertEquals("Core Java Test", testService.showTest(BigInteger.valueOf(101)).getTestTitle());
 	  
-	  System.out.println("Checking obtained marks");
-	  assertEquals(BigDecimal.valueOf(70.20), testService.showTest(BigInteger.valueOf(101)).getTestMarksScored());
+	  System.out.println("Verifying obtained marks");
+	  assertEquals(BigDecimal.valueOf(80), testService.showTest(BigInteger.valueOf(101)).getTestMarksScored());
 	  
   }
 	
   @Test
-  void test2()
+   public void test2()
   {
  
 		
 	  assertEquals(LocalTime.of(04, 30), testService.updateTest(BigInteger.valueOf(101), main.testUpdataion(), "duration").getTestDuration());
-	  System.out.println("Check updated time duration");
+	  System.out.println("Verified updated duration");
   }
   
   @Test
-  void test3()
+  public void test3()
   {
 	  
 	  
-	  assertEquals( "CSS Test", testService.deleteTest(BigInteger.valueOf(102)).getTestTitle());
-	  System.out.println("Checking title of deleted test");
+	  assertEquals( "CSS Test", testService.deleteTest(BigInteger.valueOf(103)).getTestTitle());
+	  System.out.println("Verified title of deleted test(103)");
   }
   
   @Test 
-  void test4() throws DurationException
+  public void test4() throws DurationException
   { 
-		
+	  System.out.println("Add test to verify Test Title");
 	  assertEquals("java", testService.addTest(main.createTest()).getTestTitle());
-	  System.out.println("Checking title of deleted test");
+	  System.out.println("Verified the title of test recently added");
   }
 }

@@ -12,7 +12,7 @@ public class TestDaoImpl implements TestDaoI {
 	public Test addTest(Test test) {
 		// TODO Auto-generated method stub
 		
-		return TestCollection.addTest(test);
+		return testCollect.addTest(test);
 		
 	}
 

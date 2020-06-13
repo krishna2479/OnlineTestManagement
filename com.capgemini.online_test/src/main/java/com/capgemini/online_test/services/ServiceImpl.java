@@ -15,12 +15,12 @@ public class ServiceImpl implements IService {
 Scanner s = new Scanner(System.in);
 	
 	QuestionDaoImpl queDao = new QuestionDaoImpl();
+	TestDaoImpl testdao = new TestDaoImpl();
+	
 	
 	@Override
 	public Question addQuestion(Question createQue) {
 		// TODO Auto-generated method stub
-		
-		//System.out.println(queDao.addQuestion(createQue));
 		
 		return queDao.addQuestion(createQue);
 	
@@ -40,7 +40,6 @@ Scanner s = new Scanner(System.in);
 	}
 	
 	QuestionCollection coll = new QuestionCollection();
-	TestDaoImpl tDao = new TestDaoImpl();
 	
 	Question question;
 	
@@ -50,18 +49,19 @@ Scanner s = new Scanner(System.in);
 	    
 		if(test.getTestDuration().getHour() < 2)
 		{
-			throw new DurationException("Test duration should be of 2 or more than 2 hour");
+			throw new DurationException("Test not added duration must be more than 2 hours");
 		}
-		
-	    tDao.addTest(test);
-	    
+		else {
+	    testdao.addTest(test);
+	    System.out.println("Test added.");
+		}
 		return test;
 	}
 
 	@Override
 	public Test updateTest(BigInteger tId, Test testObj, String updateType) {
 
-		tDao.updateTest(tId, testObj, updateType);
+		testdao.updateTest(tId, testObj, updateType);
 		
 		return testObj;
 	
@@ -70,13 +70,13 @@ Scanner s = new Scanner(System.in);
 	@Override
 	public Test deleteTest(BigInteger testId) {
 		
-		return tDao.deleteTest(testId);
+		return testdao.deleteTest(testId);
 	}
 
     @Override	
 	public Test showTest(BigInteger id)
 	{
 		
-		 return tDao.showTest(id);
+		 return testdao.showTest(id);
 	}
 }
