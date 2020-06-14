@@ -80,4 +80,10 @@ Scanner s = new Scanner(System.in);
 		
 		 return testdao.showTest(id);
 	}
+    @Override	
+   	public Test deleteTest1(BigInteger id)
+   	{
+   		
+   		 return testdao.showTest(id);
+   	}
 }

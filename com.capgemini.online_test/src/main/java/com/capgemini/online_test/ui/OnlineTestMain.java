@@ -154,16 +154,16 @@ static UserCollection uCollection = new UserCollection();
 	
 	public static void showTest(BigInteger testId)
 	{
-		Test showTetst = serviceTest.showTest(testId);
+		Test showTest = serviceTest.showTest(testId);
 		
-	    if(showTetst != null)
+	    if(showTest != null)
 	    {
 	    System.out.println("Test Title \t Test id \t Test Duration \t Total Marks \t Test Start Time \t Test End Time");
 	    
-	    System.out.println(showTetst.getTestTitle()+"\t"+showTetst.getTestId()+"\t\t"+showTetst.getTestDuration()+"\t"+
-	    showTetst.getTestTotalMarks()+"\t"+showTetst.getStartTime()+"\t"+showTetst.getEndTime());
+	    System.out.println(showTest.getTestTitle()+"\t"+showTest.getTestId()+"\t\t"+showTest.getTestDuration()+"\t"+
+	    showTest.getTestTotalMarks()+"\t"+showTest.getStartTime()+"\t"+showTest.getEndTime());
 	
-	    Set<Question> queSet = showTetst.getTestQuestions();
+	    Set<Question> queSet = showTest.getTestQuestions();
 
 	    if(queSet == null)
 	    {
@@ -194,6 +194,17 @@ static UserCollection uCollection = new UserCollection();
 	    else
 	    	System.out.println("No such test exists");
 	}
+	public static void deleteTest(BigInteger testId1)
+	{
+		Test deleteTest = serviceTest.deleteTest1(testId1);
+		
+	    if(deleteTest != null)
+	    {
+	    	System.out.println("Test deleted.");
+	    }else
+	    	System.out.println("Test not available");
+	    }
+	    
 	
 	
 	public static Test testUpdataion()
@@ -434,8 +445,8 @@ static UserCollection uCollection = new UserCollection();
 			System.out.println("Enter id to delete the test");
 			BigInteger testId1 = s.nextBigInteger();
 			
+			deleteTest(testId1);
 			serviceTest.deleteTest(testId1);
-			System.out.println("Test deleted.");
 			break;
 			
 		case "5":

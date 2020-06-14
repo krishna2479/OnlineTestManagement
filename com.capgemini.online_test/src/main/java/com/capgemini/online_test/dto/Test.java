@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Test {
 	
-		private BigInteger testId ;
+		public BigInteger testId ;
 		private String testTitle;
 		private LocalTime testDuration ;
 		private  Set<Question> testQuestions ;
