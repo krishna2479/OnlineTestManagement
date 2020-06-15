@@ -62,12 +62,12 @@ public class TestCollection {
 	}
 	
 	
-		public Test addTest(Test test) {
+	public Test addTest(Test test) {
 		testList.add(test);
 		return test;
 	}
 
-	static public Test showTest(BigInteger id)
+	public Test showTest(BigInteger id)
 	{
 		for(Test test : testList)
 		{
@@ -78,7 +78,7 @@ public class TestCollection {
 		return null;
 	}
 	
-	static public Test deleteTest1(BigInteger id)
+	public Test deleteTest1(BigInteger id)
 	{
 		for(Test test : testList)
 		{

@@ -32,7 +32,7 @@ static UserCollection uCollection = new UserCollection();
 	static Scanner s = new Scanner(System.in);
 
 	
-	//method to create a new test 
+	//method to add a new test 
 	public static Test addTest()
 	{
 		
@@ -45,7 +45,7 @@ static UserCollection uCollection = new UserCollection();
 		while(val1) {
 	    if(serviceTest.showTest(testId) != null)
 	    {
-	    	System.out.println("A test with same id already exists please enter different id");
+	    	System.out.println("A test with same test id is already present please enter different id");
 	    	testId = s.nextBigInteger();
 	    }
 	    else
@@ -365,7 +365,7 @@ static UserCollection uCollection = new UserCollection();
 		// TODO Auto-generated method stub
 
 				
-		System.out.println(".......  Welcome ........");
+		System.out.println(".......  Welcome to Online Test Management ........");
 		System.out.println("Enter user id to use our services");
 		
 		String id = s.next();

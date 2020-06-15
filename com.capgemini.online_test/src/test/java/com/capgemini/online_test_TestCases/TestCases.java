@@ -45,15 +45,15 @@ public class TestCases {
   {
 	  
 	  
-	  assertEquals( "CSS Test", testService.deleteTest(BigInteger.valueOf(103)).getTestTitle());
-	  System.out.println("Verified title of deleted test(103)");
+	  assertEquals( "Angular Test", testService.deleteTest(BigInteger.valueOf(104)).getTestTitle());
+	  System.out.println("Verified title of deleted test(104)");
   }
   
   @Test 
   public void test4() throws DurationException
   { 
 	  System.out.println("Add test to verify Test Title");
-	  assertEquals("java", testService.addTest(main.addTest()).getTestTitle());
+	  assertEquals("Sprint 1", testService.addTest(main.addTest()).getTestTitle());
 	  System.out.println("Verified the title of test recently added");
   }
 }
