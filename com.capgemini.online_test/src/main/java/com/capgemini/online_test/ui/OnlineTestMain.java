@@ -33,7 +33,6 @@ static UserCollection uCollection = new UserCollection();
 
 	
 	//method to create a new test 
-	
 	public static Test addTest()
 	{
 		
@@ -106,7 +105,7 @@ static UserCollection uCollection = new UserCollection();
 		
 		test.setTestQuestions(testQuestions);
 		
-		System.out.println("Enter testToatal Marks");
+		System.out.println("Enter testTotal Marks");
 		BigDecimal testTotalMarks = s.nextBigDecimal();
 		
 		test.setTestTotalMarks(testTotalMarks);
@@ -119,7 +118,7 @@ static UserCollection uCollection = new UserCollection();
 		Question currentQuestion = question;
 		test.setCurrentQuestion(currentQuestion);
 		
-		System.out.println("Enter start time Marks");
+		System.out.println("Enter start time ");
 		
 		System.out.println("enter date");
 		int date = s.nextInt();
@@ -133,7 +132,7 @@ static UserCollection uCollection = new UserCollection();
 	    LocalDateTime startTime = LocalDateTime.of(2020, 02, date, hour, minute); 
 		test.setStartTime(startTime);
 	    
-	    System.out.println("Enter end time Marks");
+	    System.out.println("Enter end time ");
 	    
 		System.out.println("enter date");
 		int date1 = s.nextInt();
@@ -150,8 +149,7 @@ static UserCollection uCollection = new UserCollection();
 		return test;
 	}
 	
-	//method to show the test assigned to user
-	
+	//method to show the test
 	public static void showTest(BigInteger testId)
 	{
 		Test showTest = serviceTest.showTest(testId);
@@ -192,22 +190,25 @@ static UserCollection uCollection = new UserCollection();
 	    }
 	    
 	    else
-	    	System.out.println("No such test exists");
+	    	System.out.println("Test not available with this Test Id.");
 	}
+	
+	//method to delete test
 	public static void deleteTest(BigInteger testId1)
 	{
 		Test deleteTest = serviceTest.deleteTest1(testId1);
 		
 	    if(deleteTest != null)
 	    {
+	    	serviceTest.deleteTest(testId1);
 	    	System.out.println("Test deleted.");
 	    }else
 	    	System.out.println("Test not available");
-	    }
+	}
 	    
 	
-	
-	public static Test testUpdataion()
+	//method to update the test.
+	public static Test testUpdate()
 	{
 		Test testObj = new Test();
 		
@@ -418,7 +419,6 @@ static UserCollection uCollection = new UserCollection();
 			} catch (DurationException e) {
 				
 				System.out.println(e.getMessage());
-				//e.printStackTrace();
 			}
 		  
 		   break;
@@ -437,7 +437,7 @@ static UserCollection uCollection = new UserCollection();
 			System.out.println("Enter the test id to update the test");
 			BigInteger tId = s.nextBigInteger();
 			
-			Test test2 = testUpdataion();
+			Test test2 = testUpdate();
 			serviceTest.updateTest(tId, test2, updateType);
 			break;
 		
@@ -446,7 +446,6 @@ static UserCollection uCollection = new UserCollection();
 			BigInteger testId1 = s.nextBigInteger();
 			
 			deleteTest(testId1);
-			serviceTest.deleteTest(testId1);
 			break;
 			
 		case "5":

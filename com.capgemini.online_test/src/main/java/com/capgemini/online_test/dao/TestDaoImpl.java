@@ -59,9 +59,10 @@ public class TestDaoImpl implements TestDaoI {
 	{
 		return testCollect.showTest(testId);
 	}
+	
 	public Test deleteTest1(BigInteger testId)
 	{
-		return testCollect.showTest(testId);
+		return testCollect.deleteTest1(testId);
 	}
 	
 }

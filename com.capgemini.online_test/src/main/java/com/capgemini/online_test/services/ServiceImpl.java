@@ -43,6 +43,14 @@ Scanner s = new Scanner(System.in);
 	
 	Question question;
 	
+	/****************************************************************
+	 * Method - addTest
+	 * description - add the new object of class Test
+	 * @param testId - Test's id
+	 * @return - object of class Test
+	 * @author - Krishna Kant
+	 * created date - 10-FEB-2020
+	 ******************************************************************/
 	@Override
 	public Test addTest(Test test) throws DurationException {
 		// TODO Auto-generated method stub
@@ -58,6 +66,17 @@ Scanner s = new Scanner(System.in);
 		return test;
 	}
 
+	
+	/****************************************************************
+	 * Method - updateTest
+	 * description - update the object of class Test with reference of testId
+	 *               and save the updated object in variable updatedTest
+	 * @param testId - Test's id
+	 * @param updatedTest - new object to store updated values
+	 * @return - updated object of class Test
+	 * @author - Krishna Kant
+	 * created date - 11-FEB-2020
+	 ******************************************************************/
 	@Override
 	public Test updateTest(BigInteger tId, Test testObj, String updateType) {
 		
@@ -68,12 +87,29 @@ Scanner s = new Scanner(System.in);
 	
 	}
 
+	
+	/****************************************************************
+	 * Method - deleteTest
+	 * description - delete the object of class Test by testId
+	 * @param testId - Test's id
+	 * @return - message test deleted or not
+	 * @author - Krishna Kant
+	 * created date - 12-FEB-2020
+	 ******************************************************************/
 	@Override
 	public Test deleteTest(BigInteger testId) {
 		
 		return testdao.deleteTest(testId);
 	}
 
+	
+	/****************************************************************
+	 * Method - showTest
+	 * description - show the data from the static database
+	 * @return - all the object of class Test
+	 * @author - Krishna Kant
+	 * created date - 13-FEB-2020
+	 ******************************************************************/
     @Override	
 	public Test showTest(BigInteger id)
 	{
@@ -84,6 +120,7 @@ Scanner s = new Scanner(System.in);
    	public Test deleteTest1(BigInteger id)
    	{
    		
-   		 return testdao.showTest(id);
+  		 return testdao.deleteTest1(id);
    	}
+   
 }

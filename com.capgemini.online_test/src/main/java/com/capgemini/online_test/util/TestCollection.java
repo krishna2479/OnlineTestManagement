@@ -78,6 +78,17 @@ public class TestCollection {
 		return null;
 	}
 	
+	static public Test deleteTest1(BigInteger id)
+	{
+		for(Test test : testList)
+		{
+			if(test.getTestId().compareTo(id) == 0)
+				return test;
+		}
+		
+		return null;
+	}
+	
 	public Test updateTest(BigInteger id, Test test)
 	{
 		

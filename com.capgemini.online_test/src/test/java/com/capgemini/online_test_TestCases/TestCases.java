@@ -36,7 +36,7 @@ public class TestCases {
   {
  
 		
-	  assertEquals(LocalTime.of(04, 30), testService.updateTest(BigInteger.valueOf(101), main.testUpdataion(), "duration").getTestDuration());
+	  assertEquals(LocalTime.of(04, 30), testService.updateTest(BigInteger.valueOf(101), main.testUpdate(), "duration").getTestDuration());
 	  System.out.println("Verified updated duration");
   }
   
