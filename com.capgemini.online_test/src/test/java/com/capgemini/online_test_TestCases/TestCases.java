@@ -18,39 +18,38 @@ public class TestCases {
 
   @Test
   public void test1()
-  {
-	  
-	  System.out.println("Verifying Test title");
-	  
-	  
-	  
+  {  
 	  assertEquals("Core Java Test", testService.showTest(BigInteger.valueOf(101)).getTestTitle());
-	  
-	  System.out.println("Verifying obtained marks");
+	  System.out.println("Verified Test title\n");
+  }
+  
+  @Test
+  public void test2()
+  {
 	  assertEquals(BigDecimal.valueOf(80), testService.showTest(BigInteger.valueOf(101)).getTestMarksScored());
-	  
+	  System.out.println("Verified obtained marks\n");
   }
 	
   @Test
-   public void test2()
+   public void test3()
   {
  
 		
 	  assertEquals(LocalTime.of(04, 30), testService.updateTest(BigInteger.valueOf(101), main.testUpdate(), "duration").getTestDuration());
-	  System.out.println("Verified updated duration");
+	  System.out.println("Verified updated duration\n");
   }
   
   @Test
-  public void test3()
+  public void test4()
   {
 	  
 	  
 	  assertEquals( "Angular Test", testService.deleteTest(BigInteger.valueOf(104)).getTestTitle());
-	  System.out.println("Verified title of deleted test(104)");
+	  System.out.println("Verified title of deleted test(104)\n");
   }
   
   @Test 
-  public void test4() throws DurationException
+  public void test5() throws DurationException
   { 
 	  System.out.println("Add test to verify Test Title");
 	  assertEquals("Sprint 1", testService.addTest(main.addTest()).getTestTitle());

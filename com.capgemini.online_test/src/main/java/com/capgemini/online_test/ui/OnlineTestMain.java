@@ -196,9 +196,8 @@ static UserCollection uCollection = new UserCollection();
 	//method to delete test
 	public static void deleteTest(BigInteger testId1)
 	{
-		Test deleteTest = serviceTest.deleteTest1(testId1);
 		
-	    if(deleteTest != null)
+		if(serviceTest.showTest(testId1) != null)
 	    {
 	    	serviceTest.deleteTest(testId1);
 	    	System.out.println("Test deleted.");

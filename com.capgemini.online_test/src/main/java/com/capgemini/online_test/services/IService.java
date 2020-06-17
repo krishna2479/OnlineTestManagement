@@ -20,9 +20,6 @@ public Question addQuestion(Question question);
 	
     public Test deleteTest(BigInteger testId);
 	
-    public Test showTest(BigInteger id);
-    
-    public Test deleteTest1(BigInteger id);
-    
+    public Test showTest(BigInteger id);  
 	
 }
